@@ -1,2 +1,4 @@
 # node.js-test
-testing node.js apps with Now
+
+
+Just following instructions from this article to learn how to create a simple Node.js app: https://flaviocopes.com/zeit-now/
