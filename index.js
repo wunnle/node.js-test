@@ -1,22 +1,13 @@
-const express = require('express')
-const helmet = require('helmet')
+var express = require('express');
+var app = express();
+var wiki = require('./wiki')
 
-const app = express()
+app.get('/', function(req, res) {
+  res.send('Hello World!');
+});
 
-app.use(helmet())
+app.use('/wiki', wiki)
 
-app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/html')
-  res.status(200).send(`
-    <marquee>Hello world!</marquee>
-  `)
-})
-
-app.get('/secret', (req, res) => {
-  res.set('Content-Type', 'text/html')
-  res.status(200).send(`
-    <h1>This is a secret page!</h1>
-  `)
-})
-
-module.exports = app
+app.listen(3000, function() {
+  console.log('Example app listening on port 3000!');
+});
